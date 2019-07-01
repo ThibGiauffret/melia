@@ -13,6 +13,8 @@ Les résultats sont les suivants :
 
 À termes, ce script se révèle intéressant pour traiter un grand nombre de données (comme par exemple un ensemble de photos prises par une camera de sécurité avec détection infrarouge). Sur un grand nombre de clichés, le script permet de ne garder que ceux résultant du mouvement d'une personne ou d'un véhicule.
 
+<h2>Versions</h2>
+
 Deux versions sont proposées :
 - Melia Console : une version console uniquement qui une fois configurée n'a plus qu'à être exécutée ;
 - Melia GUI : une version GUI qui permet l'affichage des zones où le mouvement est détecté et une configuration simplifiée.
