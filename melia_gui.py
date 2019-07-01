@@ -60,6 +60,14 @@ else :
 
 f.close()
 
+label_rafale = Label(configArea, text="Nombre de photos en rafale")
+label_rafale.pack(anchor=W)
+
+rafale = StringVar()
+rafale.set('3')
+ligne_rafale = Entry(configArea, textvariable=rafale, background='white')
+ligne_rafale.pack()
+
 label_seuil = Label(configArea, text="Seuil de similarité (de 0 à 1)")
 label_seuil.pack(anchor=W)
 
@@ -138,7 +146,7 @@ def run():
     imagePaths = glob.glob(path)
     imagePaths.sort()
     
-    for i in range (0,len(imagePaths),2):
+    for i in range (0,len(imagePaths),int(ligne_rafale.get())):
 
         first = imagePaths[i]
         second = imagePaths[i+1]
