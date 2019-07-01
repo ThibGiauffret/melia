@@ -138,20 +138,20 @@ def run():
     imagePaths = glob.glob(path)
     imagePaths.sort()
     
-    for i in range (0,len(imagePaths),3):
+    for i in range (0,len(imagePaths),2):
 
         first = imagePaths[i]
         second = imagePaths[i+1]
        
-        imageA = imread(first)
-        imageA = resize(imageA, width=min(400, imageA.shape[1]))
+        imageA = cv2.imread(first)
+        imageA = imutils.resize(imageA, width=min(400, imageA.shape[1]))
         imageA = imageA[70:270,70:330]
-        imageB = imread(second)
-        imageB = resize(imageB, width=min(400, imageB.shape[1]))
+        imageB = cv2.imread(second)
+        imageB = imutils.resize(imageB, width=min(400, imageB.shape[1]))
         imageB = imageB[70:270,70:330]
     
-        grayA = cvtColor(imageA, COLOR_BGR2GRAY)
-        grayB = cvtColor(imageB, COLOR_BGR2GRAY)
+        grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
+        grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
     
         (score, diff) = compare_ssim(grayA, grayB, full=True)
         diff = (diff * 255).astype("uint8")
