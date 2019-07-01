@@ -3,6 +3,8 @@
 
 L'objectif ici et d'utiliser Python et la librairie OpenCV afin de realiser une détection de mouvement. Pour cela, on se base sur une série de photos prises en rafale et on effectue une comparaison entre deux images. Un mouvement a été simulé en bougeant une figurine entre deux clichés successifs. On ne fait pas de la détection profil ou de forme ici, on compare juste la différence entre deux images en se basant sur le Structural Similarity Index (SSIM).
 
+<h2>Exemple</h2>
+
 Les résultats sont les suivants :
 
 ![Original](http://thibault.giauffret.free.fr/git/images/melia/original.png)
@@ -21,6 +23,8 @@ Les chemins sont stockés dans un fichier <em>config.txt</em>. La première lign
 
 <b>Attention</b> : il faut que ces dossiers soient existants, le script ne les crée pas...
 
+<h2>Prérequis</h2>
+
 Dans tous les cas, il sera nécessaire d'installer Python 3.7 et de charger les librairies suivantes :
 - scikit-image
 - imutils
@@ -31,5 +35,7 @@ Dans tous les cas, il sera nécessaire d'installer Python 3.7 et de charger les 
 - datetime
 
 <b>Remarque</b> : si elle ne sont pas installées par défaut, les charger avec un utilitaire de librairie tel que <em>pip</em>.
+
+<h2>Détails de fonctionnement</h2>
 
 Le détail du fonctionnement du script est donné dans les fichiers <em>py</em>.
