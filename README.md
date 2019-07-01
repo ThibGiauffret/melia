@@ -1,7 +1,7 @@
 # Melia
 <b>Algorithme de détection de mouvement basé sur une prise en rafale de photos</b>
 
-L'objectif ici et d'utiliser Python et la librairie OpenCV afin de realiser une détection de mouvement. Pour cela, on se base sur une série de photos prises en rafale et on effectue une comparaison entre deux images. Un mouvement a été simulé en bougeant une figurine entre deux clichés successifs. On ne fait pas de la détection profil ou de forme ici, on compare juste la différence entre deux images en se basant sur le Structural Similarity Index (SSIM).
+L'objectif ici est d'utiliser Python et la librairie OpenCV afin de realiser une détection de mouvement. Pour cela, on se base sur une série de photos prises en rafale et on effectue une comparaison entre deux images. Un mouvement a été simulé en bougeant une figurine entre deux clichés successifs. On ne fait pas de la détection profil ou de forme ici, on compare juste la différence entre deux images en se basant sur le Structural Similarity Index (SSIM).
 
 <h2>Exemple</h2>
 
