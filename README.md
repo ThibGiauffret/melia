@@ -15,7 +15,7 @@ Deux versions sont proposées :
 - Melia Console : une version console uniquement qui une fois configurée n'a plus qu'à être exécuté ;
 - Melia GUI : une version GUI qui permet l'affichage des zones où le mouvement est détecté et un configuration simplifiée.
 
-Les chemins sont stockés dans un fichier <em>config.txt</em>. La première ligne correspond à l'emplacement des photos à traiter, la seconde est l'emplcement où seront sauvegardées les photos d'intérêt.
+Les chemins sont stockés dans un fichier <em>config.txt</em>. La première ligne correspond à l'emplacement des photos à traiter, la seconde est l'emplacement où seront sauvegardées les photos d'intérêt.
 
 Attention : il faut que ces dossiers soient existants, le script ne les crée pas...
 
