@@ -153,10 +153,10 @@ def run():
        
         imageA = cv2.imread(first)
         imageA = imutils.resize(imageA, width=min(400, imageA.shape[1]))
-        imageA = imageA[70:270,70:330]
+        #imageA = imageA[70:270,70:330]
         imageB = cv2.imread(second)
         imageB = imutils.resize(imageB, width=min(400, imageB.shape[1]))
-        imageB = imageB[70:270,70:330]
+        #imageB = imageB[70:270,70:330]
     
         grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
         grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
