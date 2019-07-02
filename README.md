@@ -1,7 +1,7 @@
 # Melia
 <b>Algorithme de détection de mouvement basé sur une prise en rafale de photos</b>
 
-L'objectif ici est d'utiliser Python et la librairie OpenCV afin de realiser une détection de mouvement. Pour cela, on se base sur une série de photos prises en rafale et on effectue une comparaison entre deux images. Un mouvement a été simulé en bougeant une figurine entre deux clichés successifs. On ne fait pas de la détection profil ou de forme ici, on compare juste la différence entre deux images en se basant sur le Structural Similarity Index (SSIM).
+L'objectif ici est d'utiliser Python et la librairie OpenCV afin de realiser une détection de mouvement. Pour cela, on se base sur une série de photos prises en rafale et on effectue une comparaison entre deux images. Un mouvement a été simulé en bougeant une figurine entre deux clichés successifs. Le script se base sur la différence entre ces deux clichés en utilisant le Structural Similarity Index (SSIM). 
 
 <h2>Exemple</h2>
 
@@ -10,6 +10,8 @@ Les résultats sont les suivants :
 ![Original](http://thibault.giauffret.free.fr/git/images/melia/original.png)
 ![Modified](http://thibault.giauffret.free.fr/git/images/melia/modified.png)
 ![Diff](http://thibault.giauffret.free.fr/git/images/melia/diff.png)
+
+Par exemple, entre ces deux clichés, le SSIM est de 0.73. Comme le seuil est défini à 0.98, le script perçoit cela comme un mouvement majeur.
 
 À termes, ce script se révèle intéressant pour traiter un grand nombre de données (comme par exemple un ensemble de photos prises par une camera de sécurité avec détection infrarouge). Sur un grand nombre de clichés, le script permet de ne garder que ceux résultant du mouvement d'une personne ou d'un véhicule.
 
