@@ -40,9 +40,9 @@ else :
 
 path = var.strip() + "*.JPG"    # On récupère les adresses de toutes les images au format JPG
 imagePaths = glob.glob(path)
-imagePaths.sort()   # On les tris par ordre alphabétique
+imagePaths.sort()   # On les trie par ordre alphabétique
 
-for i in range (0,len(imagePaths),3):   # Dans le cas d'un prise en rafale de 3 images, on parcours toutes les images par groupe de 3.
+for i in range (0,len(imagePaths),3):   # Dans le cas d'un prise en rafale de 3 images, on parcourt toutes les images par groupe de 3.
     print('Traitement en cours...')
     first = imagePaths[i]   
     second = imagePaths[i+1]    
@@ -60,7 +60,7 @@ for i in range (0,len(imagePaths),3):   # Dans le cas d'un prise en rafale de 3 
     (score, diff) = compare_ssim(grayA, grayB, full=True)   # On calcule de Structural Similarity Index (SSIM).
     diff = (diff * 255).astype("uint8")
     
-    if score <= 0.98 :  # Le seuil fixe est choisit expérimentalement 0.98.
+    if score <= 0.98 :  # Le seuil fixe est choisi expérimentalement 0.98.
         
         print(imagePaths[i] + ' sauvegardée !')
         path2 = var2.strip()
