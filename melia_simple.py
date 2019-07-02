@@ -49,10 +49,10 @@ for i in range (0,len(imagePaths),3):   # Dans le cas d'un prise en rafale de 3 
    
     imageA = imread(first)  # On charge la première image de la rafale.
     imageA = resize(imageA, width=min(400, imageA.shape[1]))    # On réduit la résolution pour améliorer le temps de détection et la précision.
-    imageA = imageA[70:270,70:330]  # On definit une ROI qui correspond à la zone où on souhaite détecter.
+    #imageA = imageA[70:270,70:330]  # On peut definir une ROI qui correspond à la zone où on souhaite détecter.
     imageB = imread(second) # On charge la seconde image de la rafale.
     imageB = resize(imageB, width=min(400, imageB.shape[1]))
-    imageB = imageB[70:270,70:330]
+    #imageB = imageB[70:270,70:330]
 
     grayA = cvtColor(imageA, COLOR_BGR2GRAY) # On passe en niveaux de gris.
     grayB = cvtColor(imageB, COLOR_BGR2GRAY)
