@@ -168,14 +168,23 @@ def run():
         
         n_seuil = float(ligne_seuil.get())
         
-        if score <= n_seuil :
+        thresh = cv2.threshold(diff, 0, 255,
+    	        cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
+        cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+        	    cv2.CHAIN_APPROX_SIMPLE)
+        cnts = grab_contours(cnts)
+            #print(len(cnts))
             
-            thresh = cv2.threshold(diff, 0, 255,
-            	cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
-            cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
-            	cv2.CHAIN_APPROX_SIMPLE)
-            cnts = imutils.grab_contours(cnts)
+    #        cv2.imshow("Thresh", thresh)
+    #        k = cv2.waitKey(0)
+    #        if k == 27:         # wait for ESC key to exit
+    #            cv2.destroyAllWindows()
+            
+        if score <= n_seuil and len(cnts) < 20 :  # Le seuil fixe est choisit expérimentalement 0.98. 
+            # On élimine aussi les clichés avec trop de bruit !
         
+            detect += 1
+            
             for c in cnts:
                 	(x, y, w, h) = cv2.boundingRect(c)
                 	cv2.rectangle(imageA, (x, y), (x + w, y + h), (0, 0, 255), 2)
@@ -186,14 +195,26 @@ def run():
             fenetre.update()
             print(imagePaths[i] + ' sauvegardée !')
             path2 = str(ligne_texte2.get()) 
-            try:
-                os.mkdir(path2 + now.strftime("%Y-%m-%d"))
-            except FileExistsError:
-                pass
-            copyfile(imagePaths[i], path2 + now.strftime("%Y-%m-%d") + '/img_'+ str(counter) + '.jpg')
-            detect+=1
             
-        counter+=1
+            try:
+                mkdir(path2)
+                try:
+                    mkdir(path2 + now.strftime("%Y-%m-%d"))     # On crée un dossier à la date du jour.
+                except FileExistsError:
+                    pass
+            except FileExistsError:
+                try:
+                    mkdir(path2 + now.strftime("%Y-%m-%d"))     # On crée un dossier à la date du jour.
+                except FileExistsError:
+                    pass
+            try:
+                copyfile(imagePaths[i], path2 + now.strftime("%Y-%m-%d") + '/img'+ str(counter) + '.jpg')  # On copie les images du mouvement.
+                print(imagePaths[i] + ' sauvegardée !')
+            except FileNotFoundError:
+                print('Une erreur s\'est produite !')
+            
+            counter+=1
+
         
     label4 = Label(cadre, text="Nombre de mouvements détectés : {}".format(detect))
     label4.pack()
