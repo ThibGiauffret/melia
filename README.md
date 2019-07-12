@@ -13,7 +13,9 @@ Les résultats sont les suivants :
 
 Par exemple, entre ces deux clichés, le SSIM est de 0.73. Comme le seuil est défini à 0.98, le script perçoit cela comme un mouvement majeur.
 
-À termes, ce script se révèle intéressant pour traiter un grand nombre de données (comme par exemple un ensemble de photos prises par une camera de sécurité avec détection infrarouge). Sur un grand nombre de clichés, le script permet de ne garder que ceux résultant du mouvement d'une personne ou d'un véhicule.
+À termes, ce script se révèle intéressant pour traiter un grand nombre de données (comme par exemple un ensemble de photos prises par une camera de surveillance à détection infrarouge). Sur un grand nombre de clichés, le script permet de ne garder que ceux présentant un mouvement d'une personne ou d'un véhicule dans une zone donnée.
+
+En exterieur, on peut ainsi s'affranchir des clichés résultant du mouvement de l'environnement (à cause du vent par exemple). Pour faire cela, on réalise une détection de seuil (threshold) qui permet de détourer les zones où un mouvement a été détecté. Si ces zones sont trop nombreuses (fixé arbitairement à 20), on considère que qu'il s'agit de "bruit" du au mouvement de l'environnement.
 
 <h2>Versions</h2>
 
