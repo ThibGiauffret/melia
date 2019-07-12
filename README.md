@@ -27,8 +27,6 @@ Deux versions sont proposées :
 
 Les chemins sont stockés dans un fichier <em>config.txt</em>. La première ligne correspond à l'emplacement des photos à traiter, la seconde est l'emplacement où seront sauvegardées les photos d'intérêt.
 
-<b>Attention</b> : il faut que ces dossiers soient existants, le script ne les crée pas...
-
 <h2>Prérequis</h2>
 
 Dans tous les cas, il sera nécessaire d'installer Python 3.7 et de charger les librairies suivantes :
