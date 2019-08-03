@@ -7,9 +7,9 @@ L'objectif ici est d'utiliser Python et la librairie OpenCV afin de realiser une
 
 Les résultats sont les suivants :
 
-![Original](http://thibault.giauffret.free.fr/git/images/melia/original.png)
-![Modified](http://thibault.giauffret.free.fr/git/images/melia/modified.png)
-![Diff](http://thibault.giauffret.free.fr/git/images/melia/diff.png)
+![Original](https://www.ensciences.fr/git/images/melia/original.png)
+![Modified](https://www.ensciences.fr/git/images/melia/modified.png)
+![Diff](https://www.ensciences.fr/git/images/melia/diff.png)
 
 Par exemple, entre ces deux clichés, le SSIM est de 0.73. Comme le seuil est défini à 0.98, le script perçoit cela comme un mouvement majeur.
 
@@ -23,7 +23,7 @@ Deux versions sont proposées :
 - Melia Console : une version console uniquement qui une fois configurée n'a plus qu'à être exécutée ;
 - Melia GUI : une version GUI qui permet l'affichage des zones où le mouvement est détecté et une configuration simplifiée.
 
-![gui](http://thibault.giauffret.free.fr/git/images/melia/gui.png)
+![gui](https://www.ensciences.fr/git/images/melia/gui.png)
 
 Les chemins sont stockés dans un fichier <em>config.txt</em>. La première ligne correspond à l'emplacement des photos à traiter, la seconde est l'emplacement où seront sauvegardées les photos d'intérêt.
 
